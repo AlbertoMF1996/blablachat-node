@@ -15,10 +15,10 @@ const port = process.env.PORT || 80;
 // });
 
 const connection = mysql.createPool({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'blablachat'
+    host: 'sql7.freemysqlhosting.net',
+    user: 'sql7340274',
+    password: 'VHjksb9MJX',
+    database: 'sql7340274'
 });
 
 // connection.connect(err => {
