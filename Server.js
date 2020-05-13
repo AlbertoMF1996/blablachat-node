@@ -7,18 +7,25 @@ app.use(cors({origin: '*'}));
 
 const port = process.env.PORT || 80;
 
-const connection = mysql.createConnection({
+// const connection = mysql.createConnection({
+//     host: 'localhost',
+//     user: 'root',
+//     password: '',
+//     database: 'blablachat'
+// });
+
+const connection = mysql.createPool({
     host: 'localhost',
     user: 'root',
     password: '',
     database: 'blablachat'
 });
 
-connection.connect(err => {
-    if(err){
-        return err;
-    }
-});
+// connection.connect(err => {
+//     if(err){
+//         return err;
+//     }
+// });
 
 
 // app.get('/', (req, res) => {
