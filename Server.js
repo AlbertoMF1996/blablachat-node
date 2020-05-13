@@ -21,9 +21,13 @@ connection.connect(err => {
 });
 
 
-app.get('/', (req, res) => {
-    res.send('go to /posts to see post');
+// app.get('/', (req, res) => {
+//     res.send('go to /posts to see post');
+// });
+app.get('/', function (req, res) {
+    res.sendFile(__dirname + '/index.html');
 });
+
 
 app.get('/posts', (req, res) =>{
     const {id} = req.query;
