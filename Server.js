@@ -38,7 +38,7 @@ app.get('/', function (req, res) {
 
 app.get('/posts', (req, res) =>{
     const {id} = req.query;
-    const selectAllPostsQuery = `SELECT * FROM posts WHERE idUsuario LIKE '${id}'`;
+    const selectAllPostsQuery = `SELECT * FROM posts WHERE idUsuario LIKE '${id}' ORDER BY id DESC`;
     connection.query(selectAllPostsQuery, (err, results) => {
         if (err){
             return res.send(err);
