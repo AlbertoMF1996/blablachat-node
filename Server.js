@@ -64,7 +64,7 @@ app.get('/posts/add', (req, res) => {
 
 app.get('/users', (req, res) =>{
     const { nameSearch, uid } = req.query;
-    const selectUserQuery = `SELECT * FROM users WHERE firstName LIKE '%${nameSearch}%' OR lastName LIKE '%${nameSearch}%' AND id NOT LIKE ${uid}`;
+    const selectUserQuery = `SELECT * FROM users WHERE firstName LIKE '%${nameSearch}%' OR lastName LIKE '%${nameSearch}%' AND id NOT LIKE '${uid}'`;
     connection.query(selectUserQuery, (err, results) => {
         if (err){
             return res.send(err);
